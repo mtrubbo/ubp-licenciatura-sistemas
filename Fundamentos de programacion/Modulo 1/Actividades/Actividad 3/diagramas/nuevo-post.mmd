@@ -1,0 +1,15 @@
+flowchart TD
+    A[Iniciar Publicación] --> B{Longitud correcta?}
+    B -->|No| C[Mostrar error]
+    C --> A
+    B -->|Sí| F[Agregar multimedia]
+    F --> G{Multimedia permitida?}
+    G -->|No| H[Eliminar multimedia]
+    H --> F
+    G -->|Sí| I[Publicar]
+    I --> J[Actualizar cantidad de posts de usuario]
+    J --> J0{Post menciona a otro usuario?}
+        J0 -->|Si| j0.1[notificar usuario mencionado]
+        j0.1 --> J1
+    J --> J1[Notificar seguidores de usuario]
+    J1 --> K[Fin del Proceso]

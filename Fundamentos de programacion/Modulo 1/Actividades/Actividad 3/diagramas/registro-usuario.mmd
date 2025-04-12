@@ -1,0 +1,12 @@
+flowchart TD
+    A[Usuario se registra] --> B{Datos validos?}
+    B -->|No| C[Mostrar errores]
+    C --> B
+    B -->|Si| B1{Mail ya registrado?} 
+    B1 -->|Si| B2[Mostrar error]
+    B2 --> F
+    B1 -->|No| D[Crear cuenta]
+    D --> D1[Guardar datos en BD]
+    D1 --> E[Enviar confirmación a usuario]
+    E --> F[Fin]
+    

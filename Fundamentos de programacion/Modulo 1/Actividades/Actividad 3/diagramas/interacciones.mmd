@@ -1,0 +1,16 @@
+flowchart TD
+    A[Ver publicación] --> A1{Usuario puede ver publicaciones de la cuenta?}
+    A1 -->|Si| B{Tipo de interaccion}
+    A1 -->|No| A1.1[Mostrar mje. de error] --> J
+    B -->|Like| C[Incrementar contador]
+    B -->|Comentario| D{Comentario valido?}
+    D -->|No| E[Mostrar error]
+    E --> D
+    D -->|Si| F[Publicar]
+    B -->|Repost| G{Cuenta es publica?}
+    G -->|No| H[Denegar]
+    G -->|Si| I[Crear repost]
+    C --> J[Fin]
+    F --> J
+    I --> J
+    H --> J

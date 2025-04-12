@@ -1,0 +1,27 @@
+graph TD
+    A[Plataforma de Microblogging]
+    
+    A --> B[Gestión de usuarios]
+        B --> B1[Registro]
+        B --> B2[Autenticacion]
+            B2 --> B2.1[Usuario normal]
+            B2 --> B2.2[Administrador]
+        B --> B3[Perfiles]
+            B3 --> B3.1[Publicaciones privadas]
+            
+
+    A --> C[Contenido]
+    C --> C1[Creacion de posts]
+        C1 --> C1.2[Limite de caracteres]
+
+    A --> D[Interacciones]
+    D --> D1[Likes]
+    D --> D2[Comentarios]
+    D --> D3[Reposts]
+    D --> D4[Seguidor]
+    D --> B5[Bloquear]
+
+    A --> E[Moderacion de contenido]
+    E --> E1[Analisis]
+    E --> E2[Bloqueo de contenido]
+    E --> E3[Reporte de usuarios]

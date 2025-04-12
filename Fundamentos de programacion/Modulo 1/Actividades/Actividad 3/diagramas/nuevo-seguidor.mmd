@@ -1,0 +1,14 @@
+flowchart TD
+    A["Usuario sigue otra cuenta"] --> B{"Cuenta tiene a usuario bloqueado?"}
+    B -- Si --> C["Mostrar error a usuario"]
+    B -- No --> B1{"Cuenta privada?"}
+    B1 -- Si --> B2[Enviar solicitud]
+    B2 --> B2.1{Usuario acepta?}
+    B2.1 -->|Si| D
+    B2.1 -->|No| F
+    B1 -- No --> D["Incrementar contador de seguidores"]
+    D --> E["Notificar cuenta de nuevo seguidor"]
+    E --> F["Fin"]
+
+
+

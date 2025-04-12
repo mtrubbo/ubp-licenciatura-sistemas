@@ -1,0 +1,11 @@
+flowchart TD
+    A[Nueva Publicación] --> B{Contenido seguro?}
+    B -->|Sí| C[Publicar]
+    B -->|No| D{Nivel de riesgo}
+    D -->|Bajo| E[Ocultar post]
+    D -->|Alto| F[Eliminar post]
+    E --> G[Notificar usuario]
+    F --> H[Suspender cuenta]
+    G --> I[Fin]
+    H --> I
+    C --> I
